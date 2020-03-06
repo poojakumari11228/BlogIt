@@ -1,0 +1,26 @@
+.contact-head{
+    background:#161515;
+    margin-left: 20%;
+    margin-right: 10%;
+    padding: 2px;
+    color: white;
+    box-shadow: 0 4px 8px 0 #DDBBA8;
+    width: 50% ;
+    border-radius: 5%;
+}
+.contact-content{
+    background:#161515;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+    color: white;
+    box-shadow: 0 4px 8px 0 #DDBBA8;
+    margin-left: 20%;
+    margin-right: 10%;
+    width: 50% ;
+    border-radius: 5%;
+}
+#contact-body{
+margin-top: 3%;   
+padding: 0% 8%
+}

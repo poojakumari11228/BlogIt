@@ -1,0 +1,72 @@
+body{
+  /* background-image: linear-gradient(#272727, #DDBBA8,#2f2f2f ); */
+  background-color: azure;
+  /* margin: 2%; */
+}
+#closeBtn{
+    color: blanchedalmond;
+    
+}
+.modal {
+    text-align: center;
+  }
+  
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px; /* Adjusts for spacing */
+  }
+  
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .modal-backdrop{
+    position: initial;
+  }
+  .modal-header{
+ background-color:#101010;
+ color: aliceblue;
+ text-align: center;
+align-content: center;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+font-size: x-large
+  }
+ .card {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  /* max-width: 300px;
+  text-align: center; */
+  background: whitesmoke;
+  font-family: arial;
+}
+.viewDetails{
+  background: #2F2F2F; 
+  color: #DDBBA8; 
+      font-family: cursive;
+}
+.bloggerName{
+  
+  color: #FF652F;
+  font-family: fantasy;
+}
+.bloggerHeadings{
+  color: #14A76C;
+  font-family: fantasy;
+}
+.bloggerDetails{
+  font-family: auto;
+}
+.blackfont{
+  color:#0a0a0a;
+}
+.post-delete{
+  float:right;
+  width: 20%;
+  margin-top: 5%;
+  color: red;
+}
+/* #DDBBA8 */

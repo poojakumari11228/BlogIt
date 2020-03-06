@@ -1,0 +1,47 @@
+.left{
+	width: 50px;
+	height: 100%;
+	background: #2f2f2f;
+    white-space: nowrap; 
+    transition: width 0.5s ;
+    position: fixed;
+    z-index: 9999; 
+}
+	.left ul{
+		padding: 0;
+		list-style-type: none;
+		text-align: left;
+	}
+	.left li {
+		width: auto;
+		height: 60px;
+		line-height: 50px;  
+		padding-left: 18px;
+	}
+	.left li:hover {
+		background: black; 
+	}
+
+	.left:hover {
+        width: 250px; 
+    }  
+
+		.left .item-menu {
+	        height:50px;
+	        overflow:hidden;
+	        color:#fff;
+	    }  
+	.left a{
+		color: white;
+	    text-decoration: none;
+	    font-weight: bold;
+	} 
+	span.menu{
+		padding-left: 17px;
+	}
+	.t_search {
+	    color: black;
+	    height: 35px;
+	    margin-left: 15px;
+	    width: 190px
+	}

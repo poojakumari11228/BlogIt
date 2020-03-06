@@ -1,0 +1,50 @@
+div.content{
+    width:80%;
+    height:70%;
+  background-color: #000000f5;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.background{
+    padding: 20px;
+    margin-left: 12%;
+    width: 80%;
+    height: 90%;
+    background: url("../../assets/imgs/write.JPG") ;
+    background-size: cover;
+    box-shadow: 10px 10px 5px rgb(161, 148, 148);
+    border: 1px solid black;
+    
+   
+}
+div.content label {
+  
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+
+}
+.background{
+  display: table;
+  margin: 0 auto;
+}
+.heading{
+  color:rgb(28, 28, 35);
+  font-weight: bold;
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  text-shadow: 10px 10px 4px darkgray;
+}
+.write{
+  
+font-weight: bold;
+color: black;
+
+}
+.title_time{
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+}
