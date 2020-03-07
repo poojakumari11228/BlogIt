@@ -16,56 +16,64 @@ $view = '<div class="container  id="comments-container">
           <div class="tab-content" style="display: flow-root;" >
               <div class="tab-pane active" id="comments-view">                
                   <ul class="media-list" id="comments-view-ul">';
-  
-  // GET CURRENT POST ID
 
-  $post_id = $_POST['post_id'];
-  $SQL = "SELECT * FROM COMMENTS WHERE post_id ='$post_id'  ";
-  $result = $conn->query($SQL);
-   if($conn->affected_rows > 0)
-  {
-     while($row = $result->fetch_array(MYSQLI_ASSOC))
-      {
-          //FETCH COMMENTS
-      $comments  = $row['comments'];  
-      $postId = $row['post_id'];  
-      $userId = $row['user_id'];  
-      $commentId = $row['comment_id'];
-      $time =  $row['commented_at'];
 
-     // FETCH User name FFROM USER ID
-      $SQL_USER = "SELECT * FROM user WHERE user_id='$userId'  ";
-  $result_USER = $conn->query($SQL_USER);
-  if($conn->affected_rows > 0)
-  {
-      $row = $result_USER->fetch_array(MYSQLI_ASSOC);
-      $userName =  $row['username'];
-  }
+// access session user id
+$logedIn_user = $_SESSION['user_id'];
 
-      $view = $view.'
-      <li class="media" id="'.$commentId.'">
+// GET CURRENT POST ID
+$post_id = $_POST['post_id'];
+
+//Fetch it's comments
+$SQL = "SELECT * FROM COMMENTS WHERE post_id ='$post_id' and is_delete=0 ";
+$result = $conn->query($SQL);
+
+if ($conn->affected_rows > 0) {
+    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+        //FETCH COMMENTS
+        $comments  = $row['comments'];
+        $postId = $row['post_id'];
+        $userId = $row['user_id'];
+        $commentId = $row['comment_id'];
+        $time =  $row['commented_at'];
+
+        // FETCH User name FFROM USER ID
+        $SQL_USER = "SELECT * FROM user WHERE user_id='$userId'  ";
+        $result_USER = $conn->query($SQL_USER);
+        if ($conn->affected_rows > 0) {
+            $row = $result_USER->fetch_array(MYSQLI_ASSOC);
+            $userName =  $row['username'];
+        }
+
+        $view = $view . '
+                         <li class="media" id="' . $commentId . '">
                         <a class="pull-left" href="#">
                           <img class="media-object img-circle" src="assets/imgs/users/images (7).JPG" alt="profile">
                         </a>
                         <div class="media-body">
                           <div class="well well-lg">
-                              <h4 class="media-heading text-uppercase reviews"> '.$userName.' </h4>
+                              <h4 class="media-heading text-uppercase reviews"> ' . $userName . '</h4>
                               <ul class="media-date text-uppercase reviews list-inline">
-                                <li >'.$time.'</li>
-                                
-                              </ul>
+                              <li >' . $time . '</li>
+                              ';
+
+        //      If commented by logged in user, show delete option 
+        if ($logedIn_user == $userId) {
+            $view = $view . ' <br><li><button class="btn comment-delete" id="comment-delete" ><i class="fa fa-trash" ></i></button></li>';
+        }
+
+        $view = $view . ' </ul>
                               <p class="media-comment">
-                               '.$comments.'
+                               ' . $comments . '
                               </p>
                                </div>              
                         </div>
                         
                       </li>    
       ';
-   
-      }
     }
-    $view = $view.'
+}
+$view = $view . '
                    
                     </ul> 
                     
@@ -80,7 +88,7 @@ $view = '<div class="container  id="comments-container">
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">                    
-                                <button class="btn btn-success btn-circle text-uppercase" style="margin-top:2%" type="submit" id="submit-comment" name="'.$post_id.'"><span class="glyphicon glyphicon-send"></span> Summit comment</button>
+                                <button class="btn btn-success btn-circle text-uppercase" style="margin-top:2%" type="submit" id="submit-comment" name="' . $post_id . '"><span class="glyphicon glyphicon-send"></span> Summit comment</button>
                             </div>
                         </div>            
                     </form>
@@ -91,5 +99,4 @@ $view = '<div class="container  id="comments-container">
   </div>
 </div>
 ';
-  echo $view;
-?>
+echo $view;

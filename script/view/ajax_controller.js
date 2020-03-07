@@ -165,11 +165,14 @@ function comment_blog(postId){
   //alert(comment+" "+postId);
   $.post("account/user/comment_blog.php",{comment:comment, postId:postId},
   function(data){
-    // append new comment
-    $("#comments-view-ul").append(data);
      alert("Comment success");
-     //reset field
-   $("#text").val("");
+     
+   //APPENDING COMMENTS UI
+   $.post("includes/comments.php",{post_id:postId},
+   function(data)
+   {
+     $("#user-content").append(data);
+    });
      
   });
   
