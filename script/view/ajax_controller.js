@@ -93,19 +93,27 @@ function post_delete_modal(obj, type){
        //  alert('dlted '+post_id+' type '+post_type);
          modal.modal('hide');
         //  modal=null;
-        post_delete(post_id,post_type);
+        post_delete(post_type);
        });
-       modal.modal('show');    
+       modal.modal('show'); 
+       
+      //  if (confirm("Are you sure you want to delete")) {
+      //   alert(post_id);
+      //  } 
+      
     });
 }
 
-function post_delete(post_id,post_type){
-  alert(post_id);
-  //tract if the blog tobe deleted, belongs to user
+// Delete selected post
+function post_delete(post_type){
+   id = $("#dlt-post-id").text();
+  // alert(id);
+
+  //tract if this blog belongs to user
   blog='';
   if(post_type==0){
     blog = "myblogs";
-    $.post("includes/delete_blog.php",{post_id:post_id},
+    $.post("includes/delete_blog.php",{post_id:id},
     function(data)
     {
       alert(data);
