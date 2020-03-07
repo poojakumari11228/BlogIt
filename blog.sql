@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2020 at 08:30 PM
+-- Generation Time: Mar 07, 2020 at 08:57 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -33,6 +33,7 @@ CREATE TABLE `comments` (
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `comments` text,
+  `is_delete` tinyint(3) NOT NULL DEFAULT '0',
   `commented_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,16 +41,16 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`comment_id`, `post_id`, `user_id`, `comments`, `commented_at`) VALUES
-(9, 5, 4, 'Amazing', '2019-08-11 04:02:04'),
-(10, 3, 4, 'Testing...', '2019-08-11 04:11:18'),
-(11, 1, 4, 'wow', '2019-08-15 22:08:09'),
-(12, 3, 4, 'nice work', '2019-08-15 23:13:55'),
-(13, 5, 4, 'nice', '2019-08-19 03:17:54'),
-(14, 4, 4, 'nice content', '2019-08-19 05:47:42'),
-(15, 6, 4, 'nice', '2019-08-19 06:06:24'),
-(16, 3, 4, 'nice content', '2019-08-27 06:04:46'),
-(17, 12, 4, 'Worth reading, keep it up!', '2020-02-02 07:32:24');
+INSERT INTO `comments` (`comment_id`, `post_id`, `user_id`, `comments`, `is_delete`, `commented_at`) VALUES
+(9, 5, 4, 'Amazing', 0, '2019-08-11 04:02:04'),
+(10, 3, 4, 'Testing...', 0, '2019-08-11 04:11:18'),
+(11, 1, 4, 'wow', 0, '2019-08-15 22:08:09'),
+(12, 3, 4, 'nice work', 0, '2019-08-15 23:13:55'),
+(13, 5, 4, 'nice', 0, '2019-08-19 03:17:54'),
+(14, 4, 4, 'nice content', 0, '2019-08-19 05:47:42'),
+(15, 6, 4, 'nice', 0, '2019-08-19 06:06:24'),
+(16, 3, 4, 'nice content', 0, '2019-08-27 06:04:46'),
+(17, 12, 4, 'Worth reading, keep it up!', 0, '2020-02-02 07:32:24');
 
 -- --------------------------------------------------------
 
@@ -76,12 +77,12 @@ INSERT INTO `post` (`post_id`, `user_id`, `title`, `body`, `is_delete`, `posted_
 (3, 2, 'Object Oriented Programming Language', 'Java is an object oriented programming Language.', 0, '2020-03-06 21:51:04'),
 (4, 2, 'Artificial Intelligence', 'Autonomous weapons\n\nAI programmed to do something dangerous, as is the case with autonomous weapons programmed to kill, is one way AI can pose risks. It might even be plausible to expect that the nuclear arms race will be replaced with a global autonomous weapons race. Russiaâ€™s president Vladimir Putin said: â€œArtificial intelligence is the future, not only for Russia, but for all humankind. It comes with enormous opportunities, but also threats that are difficult to predict. Whoever becomes the leader in this sphere will become the ruler of the world.â€\nAside from being concerned that autonomous weapons might gain a â€œmind of their own,â€ a more imminent concern is the dangers autonomous weapons might have with an individual or government that doesnâ€™t value human life. Once deployed, they will likely be difficult to dismantle or combat.', 0, '2020-03-06 21:51:07'),
 (5, 3, 'Human-Computer Interaction (HCI)', 'Human-Computer Interaction (HCI) is a multidisciplinary field of study focusing on the design of computer technology and, in particular, the interaction between humans (the users) and computers. While initially concerned with computers, HCI has since expanded to cover almost all forms of information technology design.\n               HCI became a crucial instrument in popularizing the idea that the interaction between a computer and the user should resemble a human-to-human, open-ended dialogue. Initially HCI researchers focused on improving the usability of desktop computers (i.e., practitioners concentrated on how easy computers are to learn and use). However, thanks to the rise of technologies such as the Internet and the smartphone, computer use has increasingly moved away from the desktop to embrace the mobile world, and HCI has steadily encompassed more fields.', 0, '2019-11-10 22:04:02'),
-(6, 4, 'Computer Network', 'A computer network is a set of connected computers. Computers on a network are called nodes. The connection between computers can be done via cabling, most commonly the Ethernet cable, or wirelessly through radio waves. Connected computers can share resources, like access to the Internet, printers, file servers, and others. A network is a multipurpose connection, which allows a single computer to do more.', 1, '2020-03-07 19:27:00'),
+(6, 4, 'Computer Network', 'A computer network is a set of connected computers. Computers on a network are called nodes. The connection between computers can be done via cabling, most commonly the Ethernet cable, or wirelessly through radio waves. Connected computers can share resources, like access to the Internet, printers, file servers, and others. A network is a multipurpose connection, which allows a single computer to do more.', 0, '2020-03-07 19:52:46'),
 (7, 6, 'Classifier', 'A classifier is a special case of a hypothesis (nowadays, often learned by a machine learning algorithm). A classifier is a hypothesis or discrete-valued function that is used to assign (categorical) class labels to particular data points. In the email classification example, this classifier could be a hypothesis for labeling emails as spam or non-spam. However, a hypothesis must not necessarily be synonymous to a classifier.', 0, '2019-11-17 06:17:32'),
 (8, 4, 'Lab', 'tasshkjashdjh', 0, '2020-03-07 14:32:48'),
-(9, 4, 'Lab2', 'new lab 2', 0, '2020-03-07 14:32:51'),
+(9, 4, 'Lab2', 'new lab 2', 0, '2020-03-07 19:52:50'),
 (10, 4, 'SWE', 'Department of software engineering.', 0, '2020-03-07 14:32:53'),
-(11, 4, 'Artificial Intelligence', 'sakhkahfkjasf', 1, '2020-03-07 19:27:14'),
+(11, 4, 'Artificial Intelligence', 'sakhkahfkjasf', 0, '2020-03-07 19:52:53'),
 (12, 8, 'Web Engineering', 'Web Engineering is the application of systematic, disciplined and quantifiable approaches to development, operation, and maintenance of Web-based applications. It is both a pro-active approach and a growing collection of theoretical and empirical research in Web application development.', 0, '2020-02-02 07:17:21');
 
 -- --------------------------------------------------------
