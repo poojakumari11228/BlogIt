@@ -12,7 +12,7 @@
       <div class="modal-body">
        <!-- ModalbBody -->
        <h5 id="display-msg" name=""></h5>
-       <label id="dlt-post-id"></label>
+       <label id="dlt-post-id" style="display:none"></label>
       
       </div>
       <div class="modal-footer">
