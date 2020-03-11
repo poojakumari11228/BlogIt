@@ -26,17 +26,27 @@ $(document).ready(function(){
     // get_post_details();
     view_chat();
    });
-   
+  //  send msg
   $("#user-content").on('click', '#submit-message', function(event){
     event.preventDefault();
      write_message();
   });
-
+// comment on post
   $("#user-content").on('click', '#submit-comment', function(event){
     event.preventDefault();
     postId =  $(this).attr("name");
     comment_blog(postId);
    });
+// delete comment
+
+$("#user-content").on('click', '.comment-delete', function(event){
+  event.preventDefault();
+  id = $(this).attr("id");
+  postId =  $(this).attr("name");
+  comment_delete(id, postId);
+  // alert(id +" "+postId);
+
+ });
 
    $("#contact-us").click(function(){
    alert('Under Development...');
