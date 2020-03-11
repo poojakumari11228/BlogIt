@@ -1,5 +1,5 @@
-<!--  SOFT DELETING COMMENT FROM DB -->
 <?php
+//   SOFT DELETING COMMENT FROM DB 
 session_start();
 include_once("../db_connection/connect.php");
 

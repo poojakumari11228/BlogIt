@@ -1,5 +1,5 @@
-<!-- FETCH COMMENTS FROM DB AND DISPLAY ON INTERFACE -->
 <?php
+//  FETCH COMMENTS FROM DB AND DISPLAY ON INTERFACE 
 session_start();
 include_once("../db_connection/connect.php");
 
