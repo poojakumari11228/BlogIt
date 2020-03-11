@@ -1,3 +1,4 @@
+<!-- FETCH COMMENTS FROM DB AND DISPLAY ON INTERFACE -->
 <?php
 session_start();
 include_once("../db_connection/connect.php");
@@ -46,7 +47,7 @@ if ($conn->affected_rows > 0) {
         }
 
         $view = $view . '
-                         <li class="media" id="' . $commentId . '">
+                         <li class="media">
                         <a class="pull-left" href="#">
                           <img class="media-object img-circle" src="assets/imgs/users/images (7).JPG" alt="profile">
                         </a>
@@ -59,7 +60,7 @@ if ($conn->affected_rows > 0) {
 
         //      If commented by logged in user, show delete option 
         if ($logedIn_user == $userId) {
-            $view = $view . ' <br><li><button class="btn comment-delete" id="comment-delete" ><i class="fa fa-trash" ></i></button></li>';
+            $view = $view . ' <br><li><button class="btn comment-delete"  id="' . $commentId . '" name="'.$postId.'" ><i class="fa fa-trash" ></i></button></li>';
         }
 
         $view = $view . ' </ul>
