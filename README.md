@@ -11,7 +11,6 @@ BlogIt, website that will appeal bloggers to write and share blogs &amp; express
 - Add comments
 - Delete your comments
 - Encrypted Password
-- Relevant Information 
 - Contact other bloggers
 
 **2. Under Development**
