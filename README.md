@@ -1,6 +1,8 @@
 # BlogIt
 BlogIt, website that will appeal bloggers to write and share blogs &amp; express their ideas/thoughts.
 
+[Click here to Visit Website](https://blogit-writeandshare.000webhostapp.com/index.php#)
+
 **1. Features**
 
 - Create an account
